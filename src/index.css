@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-pink: #ff2e93;
+    --color-green: #00ff88;
+    --color-yellow: #ffe600;
+    --color-black: #050508;
+    --color-surface: #0e0e17;
+    --color-border: #1f1f30;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232338;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2e93;
+}
+
+/* Star canvas background */
+.stars-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow utility classes */
+.glow-pink {
+  box-shadow: 0 0 25px rgba(255, 46, 147, 0.45);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.45);
+}
+
+.glow-yellow {
+  box-shadow: 0 0 25px rgba(255, 230, 0, 0.45);
+}
+
+.text-gradient-pink-yellow {
+  background: linear-gradient(135deg, #ff2e93 0%, #ffe600 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green-yellow {
+  background: linear-gradient(135deg, #00ff88 0%, #ffe600 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, #ff2e93 0%, #ffe600 50%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}

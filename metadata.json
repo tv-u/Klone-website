@@ -1,0 +1,6 @@
+{
+  "name": "KLONE — Unlimited Website Cloner & Visual Studio",
+  "description": "Clone any website from a URL instantly without signup or credits. World #1 free website cloner with live AI customization, SEO metadata, clean code export, and 50+ languages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
