@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && mkdir -p assets && cp -r dist/assets/* assets/ && cp dist/assets/main-*.js assets/main.js && cp dist/assets/main-*.css assets/main.css",
+    "build": "vite build && cp dist/index.html 404.html && cp dist/index.html index.html && mkdir -p assets && cp -r dist/assets/* assets/",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
