@@ -8,7 +8,8 @@ import {
   Search, 
   ExternalLink,
   Code2,
-  Zap
+  Zap,
+  Github
 } from 'lucide-react';
 import { ActiveTab } from '../types';
 import { TOP_50_LANGUAGES, LanguageOption, getTranslation } from '../i18n/languages';
@@ -20,6 +21,7 @@ interface NavbarProps {
   setCurrentLang: (lang: LanguageOption) => void;
   onOpenClonerQuick: () => void;
   onOpenWorldwideIndexer?: () => void;
+  onOpenHostingSync?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -29,6 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   setCurrentLang,
   onOpenClonerQuick,
   onOpenWorldwideIndexer,
+  onOpenHostingSync,
 }) => {
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [langSearch, setLangSearch] = useState('');
@@ -126,6 +129,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <Globe className="w-3.5 h-3.5 text-[#00ff88]" />
               <span className="text-[#00ff88] font-bold">SEO 100/100</span>
+            </button>
+          )}
+
+          {/* GitHub & Cloudflare Live Sync Trigger Button */}
+          {onOpenHostingSync && (
+            <button
+              onClick={onOpenHostingSync}
+              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-[#121222] border border-[#2b2b48] hover:border-[#00d4ff] text-[11px] font-mono text-slate-300 hover:text-white transition-all cursor-pointer"
+              title="GitHub Pages (tv-u.github.io/Klone-website/) & Cloudflare Pages Sync Status"
+            >
+              <Github className="w-3.5 h-3.5 text-[#00d4ff]" />
+              <span className="text-[#00d4ff] font-bold">LIVE SYNC</span>
             </button>
           )}
 

@@ -285,10 +285,11 @@ Sitemap: https://kloner.app/sitemap.xml
 
 export default defineConfig(() => {
   return {
+    base: './',
     plugins: [react(), tailwindcss(), clonerApiPlugin()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(import.meta.dirname, '.'),
       },
     },
     server: {

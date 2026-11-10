@@ -14,6 +14,7 @@ import { CookieBanner } from './components/CookieBanner';
 import { StudioEditor } from './components/StudioEditor';
 import { SmartAdsBanner } from './components/SmartAdsBanner';
 import { WorldwideIndexerModal } from './components/WorldwideIndexerModal';
+import { HostingSyncModal } from './components/HostingSyncModal';
 import { HomePage } from './pages/HomePage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 import { PricingPage } from './pages/PricingPage';
@@ -32,12 +33,51 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState<ClonedProject>(ARCHETYPES.wolfer);
   const [cookieModalOpen, setCookieModalOpen] = useState<boolean>(false);
   const [indexerOpen, setIndexerOpen] = useState<boolean>(false);
+  const [hostingSyncOpen, setHostingSyncOpen] = useState<boolean>(false);
 
   // Sync html lang and dir attribute for top 50 languages worldwide SEO & typography
   useEffect(() => {
     document.documentElement.lang = currentLang.code;
     document.documentElement.dir = currentLang.dir;
   }, [currentLang]);
+
+  // GitHub Pages & Cloudflare Pages URL query parameter parser & SPA router restoration
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      
+      // Handle GitHub Pages 404.html SPA redirect (p parameter, e.g. ?p=/studio)
+      const p = params.get('p');
+      if (p) {
+        const cleanP = p.replace(/^\/+/, '').split('/')[0] as ActiveTab;
+        if (cleanP && ['home', 'studio', 'how-it-works', 'pricing', 'compare', 'showcase', 'blog', 'docs', 'contact', 'partners', 'terms', 'privacy', 'eula'].includes(cleanP)) {
+          setActiveTab(cleanP);
+        }
+      }
+
+      // Handle standard ?tab= parameter
+      const tab = params.get('tab') as ActiveTab;
+      if (tab && ['home', 'studio', 'how-it-works', 'pricing', 'compare', 'showcase', 'blog', 'docs', 'contact', 'partners', 'terms', 'privacy', 'eula'].includes(tab)) {
+        setActiveTab(tab);
+      }
+
+      // Handle ?lang= parameter
+      const lang = params.get('lang');
+      if (lang) {
+        const found = TOP_50_LANGUAGES.find(l => l.code.toLowerCase() === lang.toLowerCase());
+        if (found) setCurrentLang(found);
+      }
+
+      // Handle direct clone from URL query: ?url=https://example.com
+      const targetUrl = params.get('url');
+      if (targetUrl) {
+        setClonedUrl(targetUrl);
+        setActiveTab('studio');
+      }
+    } catch (err) {
+      console.warn('URL param parse error:', err);
+    }
+  }, []);
 
   // Triggered when user enters URL in home hero or navbar
   const handleTriggerClone = (url: string) => {
@@ -70,6 +110,7 @@ export default function App() {
         setCurrentLang={setCurrentLang}
         onOpenClonerQuick={() => setActiveTab('studio')}
         onOpenWorldwideIndexer={() => setIndexerOpen(true)}
+        onOpenHostingSync={() => setHostingSyncOpen(true)}
       />
 
       {/* Austere Smart Ad Banner (Header Placement - Zone 1) */}
@@ -167,6 +208,12 @@ export default function App() {
       <WorldwideIndexerModal
         isOpen={indexerOpen}
         onClose={() => setIndexerOpen(false)}
+      />
+
+      {/* GitHub Pages & Cloudflare Pages Sync Modal */}
+      <HostingSyncModal
+        isOpen={hostingSyncOpen}
+        onClose={() => setHostingSyncOpen(false)}
       />
     </div>
   );

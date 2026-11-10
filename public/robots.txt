@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot
+Allow: /
+Max-image-preview: large
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+Sitemap: https://tv-u.github.io/Klone-website/sitemap.xml
