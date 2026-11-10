@@ -201,6 +201,32 @@
   </head>
   <body class="bg-[#050508] text-slate-100 antialiased selection:bg-[#ff2e93] selection:text-white overflow-x-hidden min-h-screen">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Dual Hybrid Bootstrapper for GitHub Pages (tv-u.github.io/Klone-website/) & Local Vite Dev -->
+    <script>
+      (function() {
+        var isGitHubPages = window.location.hostname.indexOf('github.io') !== -1;
+        if (isGitHubPages) {
+          var cssLink = document.createElement('link');
+          cssLink.rel = 'stylesheet';
+          cssLink.crossOrigin = 'anonymous';
+          cssLink.href = './assets/main.css';
+          document.head.appendChild(cssLink);
+
+          var script = document.createElement('script');
+          script.type = 'module';
+          script.crossOrigin = 'anonymous';
+          script.src = './assets/main.js';
+          document.body.appendChild(script);
+        }
+      })();
+    </script>
+
+    <!-- Development entrypoint for Vite dev server -->
+    <script type="module">
+      if (window.location.hostname.indexOf('github.io') === -1) {
+        import('/src/main.tsx');
+      }
+    </script>
   </body>
 </html>

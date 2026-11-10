@@ -14,11 +14,15 @@ import {
 } from 'lucide-react';
 import { ActiveTab } from '../types';
 
+import { LanguageOption, getTranslation } from '../i18n/languages';
+
 interface HowItWorksPageProps {
   setActiveTab: (tab: ActiveTab) => void;
+  currentLang?: LanguageOption;
 }
 
-export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ setActiveTab }) => {
+export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ setActiveTab, currentLang }) => {
+  const langCode = currentLang?.code || 'en';
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">
       {/* Header */}
@@ -27,7 +31,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ setActiveTab }) 
           TECHNICAL DEEP DIVE
         </span>
         <h1 className="text-4xl sm:text-6xl font-black text-white mb-6">
-          How KLONE Works Under the Hood
+          {getTranslation('howItWorksTitle', langCode)}
         </h1>
         <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
           From a public URL to clean, sanitized, deployment-ready HTML5, CSS3, and JavaScript in sub-second execution. Zero signups, zero credit cards, zero proprietary locks.

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Check, Zap, Sparkles, X, Shield, ArrowRight } from 'lucide-react';
 import { ActiveTab } from '../types';
+import { LanguageOption, getTranslation } from '../i18n/languages';
 
 interface PricingPageProps {
   setActiveTab: (tab: ActiveTab) => void;
+  currentLang?: LanguageOption;
 }
 
-export const PricingPage: React.FC<PricingPageProps> = ({ setActiveTab }) => {
+export const PricingPage: React.FC<PricingPageProps> = ({ setActiveTab, currentLang }) => {
+  const langCode = currentLang?.code || 'en';
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">
       {/* Header */}
@@ -15,10 +18,10 @@ export const PricingPage: React.FC<PricingPageProps> = ({ setActiveTab }) => {
           100% FREE FOREVER • ZERO CREDIT CARD
         </span>
         <h1 className="text-4xl sm:text-6xl font-black text-white mb-6">
-          Unlimited Web Cloning for Everyone.
+          {getTranslation('pricingTitle', langCode)}
         </h1>
         <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-          No signups, no credit cards, no hidden paywalls. We believe developers and designers should have unrestricted access to inspect and clone public frontend layouts.
+          {getTranslation('pricingSubtitle', langCode)}
         </p>
       </div>
 

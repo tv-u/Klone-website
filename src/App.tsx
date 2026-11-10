@@ -138,11 +138,11 @@ export default function App() {
         )}
 
         {activeTab === 'how-it-works' && (
-          <HowItWorksPage setActiveTab={setActiveTab} />
+          <HowItWorksPage setActiveTab={setActiveTab} currentLang={currentLang} />
         )}
 
         {activeTab === 'pricing' && (
-          <PricingPage setActiveTab={setActiveTab} />
+          <PricingPage setActiveTab={setActiveTab} currentLang={currentLang} />
         )}
 
         {activeTab === 'compare' && (
