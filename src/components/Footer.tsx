@@ -190,6 +190,21 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenCookieSettin
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
+                <button onClick={() => setActiveTab('about')} className="hover:text-white transition-colors">
+                  About Us
+                </button>
+              </li>
+              <li>
+                <button onClick={() => setActiveTab('security')} className="hover:text-white transition-colors">
+                  Security & Compliance
+                </button>
+              </li>
+              <li>
+                <button onClick={() => setActiveTab('disclaimer')} className="hover:text-white transition-colors">
+                  Legal Disclaimer
+                </button>
+              </li>
+              <li>
                 <button onClick={() => setActiveTab('terms')} className="hover:text-white transition-colors">
                   Terms of Service
                 </button>

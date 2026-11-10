@@ -12,7 +12,10 @@ export type ActiveTab =
   | 'terms' 
   | 'privacy' 
   | 'eula' 
-  | 'cookies';
+  | 'cookies'
+  | 'about'
+  | 'security'
+  | 'disclaimer';
 
 export interface ClonedProject {
   id: string;

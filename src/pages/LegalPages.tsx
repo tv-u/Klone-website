@@ -3,7 +3,7 @@ import { ShieldCheck, FileText, Lock, Scale, AlertCircle } from 'lucide-react';
 import { ActiveTab } from '../types';
 
 interface LegalPagesProps {
-  type: 'terms' | 'privacy' | 'eula' | 'cookies';
+  type: 'terms' | 'privacy' | 'eula' | 'cookies' | 'disclaimer';
   setActiveTab: (tab: ActiveTab) => void;
   onOpenCookieSettings: () => void;
 }
@@ -46,6 +46,16 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
           }`}
         >
           EULA Agreement
+        </button>
+        <button
+          onClick={() => setActiveTab('disclaimer')}
+          className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold transition-all ${
+            type === 'disclaimer'
+              ? 'bg-[#00d4ff] text-black shadow-md'
+              : 'bg-[#141426] text-slate-400 hover:text-white'
+          }`}
+        >
+          Legal Disclaimer
         </button>
         <button
           onClick={onOpenCookieSettings}
@@ -161,14 +171,43 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
               KLONE grants you a worldwide, royalty-free, perpetual license to run, modify, redistribute, and deploy code packages exported through the platform. You maintain 100% full ownership over any modifications, custom styling, copy changes, and assets you introduce.
             </p>
 
-            <h3 className="text-lg font-bold text-white pt-2">2. Exported Bundle Ownership</h3>
-            <p>
-              The generated HTML5, CSS3, and JavaScript files downloaded from our Live Studio are free of proprietary software locks, vendor callbacks, or telemetry SDKs. You may host them on any service including Cloudflare, GitHub, Vercel, or personal physical servers.
-            </p>
-
             <h3 className="text-lg font-bold text-white pt-2">3. Third-Party Brand Compliance</h3>
             <p>
               When cloning public websites for inspiration or reference, you are responsible for substituting all third-party registered trademarks, proprietary logos, and copyrighted visual assets with your own authorized brand assets prior to public commercial deployment.
+            </p>
+          </div>
+        )}
+
+        {/* Legal Disclaimer */}
+        {type === 'disclaimer' && (
+          <div className="space-y-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <div className="flex items-center gap-3 pb-6 border-b border-[#1c1c30]">
+              <div className="p-3 rounded-xl bg-[#00d4ff]/15 text-[#00d4ff]">
+                <AlertCircle className="w-6 h-6" />
+              </div>
+              <div>
+                <h1 className="text-2xl sm:text-3xl font-black text-white">
+                  Legal & Intellectual Property Disclaimer
+                </h1>
+                <p className="text-xs font-mono text-slate-500">
+                  Fair Use, Copyright, and Public Web Research Notice
+                </p>
+              </div>
+            </div>
+
+            <h3 className="text-lg font-bold text-white pt-2">1. Educational & Prototyping Purpose</h3>
+            <p>
+              KLONE is provided strictly as a technical tool for public frontend DOM inspection, educational layout analysis, design prototyping, and client mockup generation. KLONE does not encourage or condone copyright infringement or trademark dilution.
+            </p>
+
+            <h3 className="text-lg font-bold text-white pt-2">2. Non-Affiliation Statement</h3>
+            <p>
+              All product names, brand logos, trademarks, and registered trademarks featured or referenced within cloned previews belong to their respective trademark holders. Reference to or display of third-party websites does not imply endorsement, sponsorship, or affiliation with KLONE.
+            </p>
+
+            <h3 className="text-lg font-bold text-white pt-2">3. User Responsibility</h3>
+            <p>
+              Users downloading exported HTML, CSS, or JavaScript bundles are solely responsible for replacing all third-party registered trademarks, proprietary media, and brand copy with authorized assets before publishing to public domain names or commercial hosting platforms.
             </p>
           </div>
         )}

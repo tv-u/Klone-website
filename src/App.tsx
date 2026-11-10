@@ -25,6 +25,8 @@ import { DocsPage } from './pages/DocsPage';
 import { ContactPage } from './pages/ContactPage';
 import { PartnersPage } from './pages/PartnersPage';
 import { LegalPages } from './pages/LegalPages';
+import { AboutPage } from './pages/AboutPage';
+import { SecurityPage } from './pages/SecurityPage';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
@@ -175,7 +177,15 @@ export default function App() {
           <PartnersPage setActiveTab={setActiveTab} />
         )}
 
-        {(activeTab === 'terms' || activeTab === 'privacy' || activeTab === 'eula') && (
+        {activeTab === 'about' && (
+          <AboutPage setActiveTab={setActiveTab} currentLang={currentLang} />
+        )}
+
+        {activeTab === 'security' && (
+          <SecurityPage setActiveTab={setActiveTab} />
+        )}
+
+        {(activeTab === 'terms' || activeTab === 'privacy' || activeTab === 'eula' || activeTab === 'disclaimer') && (
           <LegalPages
             type={activeTab}
             setActiveTab={setActiveTab}
