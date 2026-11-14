@@ -1,205 +1,418 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ==========================================
+       KLONE INFINITY | PRODUCTION EDITION
+       Cloudflare Pages + React + Adsterra
+  =========================================== -->
 
-  <meta name="google-site-verification" content="r4qiBWvH6r8g4r5B7QDJDwdewlm9aCNhUoaNleV1soA" />
+  <!-- CORE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080b14">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no">
 
   <!-- SEO -->
-  <title>KLONE — Free Website Cloner | Clone Any URL Instantly</title>
+  <title>KLONE — Discover, Explore & Enjoy</title>
+  <meta name="description" content="Discover and explore KLONE with a modern, responsive entertainment experience.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="google-site-verification" content="r4qiBWvH6r8g4r5B7QDJDwdewlm9aCNhUoaNleV1soA">
 
-  <meta name="description" content="Clone public websites from URLs. Preview, customize and export HTML, CSS and JavaScript with KLONE." />
+  <link rel="canonical" href="https://clone-website.pages.dev/">
 
-  <meta name="keywords" content="website cloner, clone website from URL, free website cloner, HTML CSS JS export, website copier, KLONE" />
+  <!-- SOCIAL -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KLONE">
+  <meta property="og:title" content="KLONE — Discover, Explore & Enjoy">
+  <meta property="og:description" content="Explore KLONE on every device.">
+  <meta property="og:url" content="https://clone-website.pages.dev/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KLONE">
+  <meta name="twitter:description" content="Discover KLONE.">
 
-  <meta name="author" content="KLONE" />
+  <!-- PERFORMANCE -->
+  <link rel="preconnect" href="https://bauval.org" crossorigin>
+  <link rel="preconnect" href="https://abscloud.org" crossorigin>
+  <link rel="preconnect" href="https://asiafilm.org" crossorigin>
 
-  <link rel="canonical" href="https://kloner.app/" />
+  <link rel="dns-prefetch" href="//bauval.org">
+  <link rel="dns-prefetch" href="//abscloud.org">
+  <link rel="dns-prefetch" href="//asiafilm.org">
 
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <!-- EXISTING REACT ASSETS -->
+  <link rel="stylesheet" href="/assets/index-yBvW-btL.css">
+  <link rel="modulepreload" href="/assets/index-jJa4NzwI.js">
 
-  <meta name="googlebot" content="index, follow" />
-
-  <meta name="bingbot" content="index, follow" />
-
-  <meta name="theme-color" content="#050508" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="KLONE" />
-  <meta property="og:title" content="KLONE — Free Website Cloner" />
-  <meta property="og:description" content="Clone, customize and export websites instantly." />
-  <meta property="og:url" content="https://kloner.app/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@kloner_app" />
-  <meta name="twitter:title" content="KLONE — Website Cloner" />
-  <meta name="twitter:description" content="Clone public websites and export editable code." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" />
-
-  <!-- HREFLANG -->
-  <link rel="alternate" hreflang="x-default" href="https://kloner.app/" />
-  <link rel="alternate" hreflang="en" href="https://kloner.app/?lang=en" />
-  <link rel="alternate" hreflang="es" href="https://kloner.app/?lang=es" />
-  <link rel="alternate" hreflang="zh-CN" href="https://kloner.app/?lang=zh-CN" />
-  <link rel="alternate" hreflang="zh-TW" href="https://kloner.app/?lang=zh-TW" />
-  <link rel="alternate" hreflang="hi" href="https://kloner.app/?lang=hi" />
-  <link rel="alternate" hreflang="ar" href="https://kloner.app/?lang=ar" />
-  <link rel="alternate" hreflang="bn" href="https://kloner.app/?lang=bn" />
-  <link rel="alternate" hreflang="pt" href="https://kloner.app/?lang=pt" />
-  <link rel="alternate" hreflang="ru" href="https://kloner.app/?lang=ru" />
-  <link rel="alternate" hreflang="ja" href="https://kloner.app/?lang=ja" />
-  <link rel="alternate" hreflang="de" href="https://kloner.app/?lang=de" />
-  <link rel="alternate" hreflang="fr" href="https://kloner.app/?lang=fr" />
-  <link rel="alternate" hreflang="pa" href="https://kloner.app/?lang=pa" />
-  <link rel="alternate" hreflang="mr" href="https://kloner.app/?lang=mr" />
-  <link rel="alternate" hreflang="te" href="https://kloner.app/?lang=te" />
-  <link rel="alternate" hreflang="tr" href="https://kloner.app/?lang=tr" />
-  <link rel="alternate" hreflang="ko" href="https://kloner.app/?lang=ko" />
-  <link rel="alternate" hreflang="vi" href="https://kloner.app/?lang=vi" />
-  <link rel="alternate" hreflang="ta" href="https://kloner.app/?lang=ta" />
-  <link rel="alternate" hreflang="ur" href="https://kloner.app/?lang=ur" />
-  <link rel="alternate" hreflang="it" href="https://kloner.app/?lang=it" />
-  <link rel="alternate" hreflang="th" href="https://kloner.app/?lang=th" />
-  <link rel="alternate" hreflang="id" href="https://kloner.app/?lang=id" />
-  <link rel="alternate" hreflang="pl" href="https://kloner.app/?lang=pl" />
-
-  <!-- ===================================== -->
-  <!-- OTHER EXISTING AD NETWORK SCRIPTS -->
-  <!-- ===================================== -->
-
-  <script async data-cfasync="false"
-    src="https://asiafilm.org/4/dc01c1237bd130c5ef9bcfef4f0928ed"></script>
-
-  <script async data-cfasync="false"
-    src="https://asiafilm.org/4/3711015d24018cf89ccb362976c4a2e0"></script>
-
-  <script async data-cfasync="false"
-    src="https://asiafilm.org/4/c2b46070b44982014166acafd6074c3d"></script>
-
-  <!-- ===================================== -->
-  <!-- ADSTERRA POPUNDER - LOAD ONCE -->
-  <!-- ===================================== -->
-
-  <script
-    type="text/javascript"
-    data-cfasync="false"
-    src="https://abscloud.org/1/d3a50ab47ccd77877101ff791a99a1b9?v=2026">
-  </script>
-
-  <!-- ===================================== -->
   <!-- STRUCTURED DATA -->
-  <!-- ===================================== -->
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "WebSite",
     "name": "KLONE",
-    "url": "https://kloner.app/",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "All",
-    "description": "Website cloning and code export application.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "url": "https://clone-website.pages.dev/",
+    "description": "Discover and explore KLONE."
   }
   </script>
 
-  <!-- ===================================== -->
-  <!-- WEBSITE CSS -->
-  <!-- ===================================== -->
+  <!-- ==========================================
+       ADSTERRA POPUNDER
+  =========================================== -->
+  <script data-cfasync="false"
+    src="https://abscloud.org/1/d3a50ab47ccd77877101ff791a99a1b9?v=2026"
+    async></script>
 
-  <link rel="stylesheet" crossorigin href="./assets/index-yBvW-btL.css" />
+  <!-- ==========================================
+       ADDITIONAL AD SCRIPTS
+  =========================================== -->
+  <script data-cfasync="false"
+    src="https://asiafilm.org/4/dc01c1237bd130c5ef9bcfef4f0928ed"
+    async></script>
 
+  <script data-cfasync="false"
+    src="https://asiafilm.org/4/3711015d24018cf89ccb362976c4a2e0"
+    async></script>
+
+  <script data-cfasync="false"
+    src="https://asiafilm.org/4/c2b46070b44982014166acafd6074c3d"
+    async></script>
+
+  <!-- ==========================================
+       KLONE DESIGN SYSTEM
+  =========================================== -->
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #080b14;
+      --surface: #111827;
+      --surface-hover: #1b263b;
+      --text: #f8fafc;
+      --muted: #9ca3af;
+      --accent: #f97316;
+      --border: rgba(255,255,255,.09);
+      --safe-top: env(safe-area-inset-top,0px);
+      --safe-bottom: env(safe-area-inset-bottom,0px);
+    }
+
+    *,*::before,*::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--background);
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      scrollbar-width: thin;
+      scrollbar-color: #374151 var(--background);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding-bottom: var(--safe-bottom);
+      overflow-x: clip;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter,system-ui,-apple-system,
+        BlinkMacSystemFont,"Segoe UI",sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img,video,iframe,canvas,svg {
+      max-width: 100%;
+    }
+
+    img {
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,input,select,textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    #root {
+      min-height: 100vh;
+      isolation: isolate;
+    }
+
+    /* INITIAL LOADER */
+    #klone-loader {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--background);
+      text-align: center;
+    }
+
+    .klone-loader-inner {
+      display: grid;
+      justify-items: center;
+      gap: 15px;
+    }
+
+    .klone-logo {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .klone-loader-text {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .klone-spinner {
+      width: 38px;
+      height: 38px;
+      border: 3px solid rgba(255,255,255,.12);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: klone-spin .8s linear infinite;
+    }
+
+    @keyframes klone-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* APP ERROR FALLBACK */
+    #klone-error {
+      display: none;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    #klone-error button {
+      margin-top: 15px;
+      padding: 12px 22px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+    }
+
+    /* AD CONTAINERS */
+    .klone-ad {
+      width: min(calc(100% - 24px),1100px);
+      margin: 20px auto;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .klone-ad:empty {
+      display: none;
+    }
+
+    .klone-native {
+      width: 100%;
+      min-height: 0;
+      margin: 0 auto;
+    }
+
+    /* NETWORK STATUS */
+    #klone-network-status {
+      display: none;
+      position: fixed;
+      z-index: 999999;
+      bottom: calc(12px + var(--safe-bottom));
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.3);
+    }
+
+    @media(max-width:600px) {
+      .klone-ad {
+        width: calc(100% - 16px);
+        margin: 14px auto;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *,*::before,*::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-[#050508] text-slate-100 antialiased selection:bg-[#ff2e93] selection:text-white overflow-x-hidden min-h-screen">
+<body>
 
-  <!-- MAIN APPLICATION -->
-  <div id="root"></div>
+  <!-- SKIP LINK -->
+  <a href="#root"
+     style="position:absolute;left:-9999px;top:10px;padding:12px;background:white;color:black;z-index:999999"
+     onfocus="this.style.left='10px'"
+     onblur="this.style.left='-9999px'">
+    Skip to main content
+  </a>
 
-  <!-- ===================================== -->
-  <!-- KLONE SMARTLINK INTEGRATION -->
-  <!-- ===================================== -->
-
-  <script src="/adsterra-smartlinks.js" defer></script>
-
-  <!-- ===================================== -->
-  <!-- ADSTERRA NATIVE BANNER -->
-  <!-- ===================================== -->
-
-  <section
-    id="klone-native-ad"
-    style="
-      display:block;
-      width:100%;
-      max-width:970px;
-      margin:24px auto;
-      padding:0 12px;
-      box-sizing:border-box;
-      overflow:hidden;
-      text-align:center;
-      position:relative;
-    "
-  >
-
-    <div style="
-      font-size:11px;
-      color:#999;
-      margin-bottom:6px;
-      letter-spacing:0.5px;
-    ">
-      Advertisement
+  <!-- ==========================================
+       MAIN REACT APPLICATION
+  =========================================== -->
+  <div id="root">
+    <div id="klone-loader">
+      <div class="klone-loader-inner">
+        <div class="klone-logo">KLONE</div>
+        <div class="klone-spinner"></div>
+        <div class="klone-loader-text">Loading your experience...</div>
+      </div>
     </div>
+  </div>
 
-    <!-- Native Ad Container -->
-    <div
-      id="container-59021404cbc40b35a851826a537e3771"
-      style="
-        width:100%;
-        min-height:90px;
-        max-width:100%;
-        overflow:hidden;
-      "
-    ></div>
-
-    <!-- Native Ad Script -->
-    <script
-      async
-      data-cfasync="false"
-      type="text/javascript"
-      src="https://bauval.org/21/59021404cbc40b35a851826a537e3771">
-    </script>
-
+  <!-- APPLICATION ERROR FALLBACK -->
+  <section id="klone-error" role="alert">
+    <h2>Something went wrong</h2>
+    <p>KLONE could not load correctly. Please check your connection and retry.</p>
+    <button type="button" onclick="location.reload()">Reload website</button>
   </section>
 
-  <!-- ===================================== -->
-  <!-- ADSTERRA SOCIAL BAR -->
-  <!-- LOAD ONLY ONCE -->
-  <!-- ===================================== -->
+  <!-- ==========================================
+       NATIVE BANNER
+  =========================================== -->
+  <section class="klone-ad" aria-label="Advertisement">
+    <div id="container-59021404cbc40b35a851826a537e3771"
+         class="klone-native"></div>
+  </section>
 
-  <script
-    type="text/javascript"
-    data-cfasync="false"
-    src="https://bauval.org/14/64091fe394e2d8b7ad5ab52ce2fee864">
+  <script data-cfasync="false"
+    src="https://bauval.org/21/59021404cbc40b35a851826a537e3771"
+    async></script>
+
+  <!-- ==========================================
+       SOCIAL BAR
+  =========================================== -->
+  <script data-cfasync="false"
+    src="https://bauval.org/14/64091fe394e2d8b7ad5ab52ce2fee864"
+    async></script>
+
+  <!-- ==========================================
+       SMARTLINK LOADER
+  =========================================== -->
+  <script>
+  (() => {
+    "use strict";
+
+    const smartlinkPath = "/adsterra-smartlinks.js";
+
+    if (document.querySelector(
+      'script[src="' + smartlinkPath + '"]'
+    )) return;
+
+    const script = document.createElement("script");
+    script.src = smartlinkPath;
+    script.async = true;
+    script.dataset.cfasync = "false";
+
+    script.onerror = () => {
+      console.warn("[KLONE] SmartLink script unavailable.");
+    };
+
+    document.body.appendChild(script);
+  })();
   </script>
 
-  <!-- ===================================== -->
-  <!-- MAIN APPLICATION JAVASCRIPT -->
-  <!-- ===================================== -->
+  <!-- ==========================================
+       NETWORK STATUS
+  =========================================== -->
+  <div id="klone-network-status" role="status" aria-live="polite"></div>
 
-  <script type="module" crossorigin src="./assets/index-jJa4NzwI.js"></script>
+  <!-- ==========================================
+       REACT APPLICATION ENTRY
+  =========================================== -->
+  <script type="module">
+    const errorPanel = document.getElementById("klone-error");
+
+    try {
+      await import("/assets/index-jJa4NzwI.js");
+
+      // Allow React time to mount before checking the root.
+      requestAnimationFrame(() => {
+        const root = document.getElementById("root");
+
+        if (root && root.querySelector("#klone-loader")) {
+          console.warn("[KLONE] React has not replaced the loading fallback.");
+        }
+      });
+
+    } catch (error) {
+      console.error("[KLONE] Application startup failed:", error);
+
+      if (errorPanel) {
+        errorPanel.style.display = "block";
+      }
+    }
+  </script>
+
+  <!-- ==========================================
+       GLOBAL ERROR & NETWORK MONITOR
+  =========================================== -->
+  <script>
+  (() => {
+    "use strict";
+
+    const status = document.getElementById("klone-network-status");
+
+    window.addEventListener("error", event => {
+      console.error(
+        "[KLONE ERROR]",
+        event.message || event.error || "Unknown error"
+      );
+    });
+
+    window.addEventListener("unhandledrejection", event => {
+      console.error("[KLONE PROMISE ERROR]", event.reason);
+    });
+
+    window.addEventListener("offline", () => {
+      status.textContent = "You are offline. Check your internet connection.";
+      status.style.display = "block";
+    });
+
+    window.addEventListener("online", () => {
+      status.textContent = "Connection restored.";
+      status.style.display = "block";
+
+      setTimeout(() => {
+        status.style.display = "none";
+      }, 2500);
+    });
+
+    console.info("[KLONE] Production document initialized.");
+  })();
+  </script>
 
 </body>
 </html>
